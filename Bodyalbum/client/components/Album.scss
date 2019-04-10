@@ -1,0 +1,243 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  display: flex;
+  background-color: #181818;
+}
+h3 {
+  font-family: Helvetica Neue;
+  font-weight: 600;
+  display: block;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -0.005em;
+  color: #fff;
+  margin: 24px 0;
+}
+.picContainer {
+  width: 280px;
+  height: 280px;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.playbutton {
+  object-fit: cover;
+  position: absolute;
+  top: 33%;
+  left: 33%;
+  opacity: 0;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  transition: all 0.2s;
+}
+.artistNameAlbum:hover {
+  text-decoration: underline;
+  color: white;
+}
+.picContainer:hover {
+  // opacity: 0.3;
+  .albumArt {
+    opacity: 0.3;
+  }
+  .playbutton {
+    opacity: 0.8;
+  }
+}
+.albumContainer {
+  display: block;
+  color: #fff;
+  width: 280px;
+  height: 371px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.015em;
+  padding-left: 8px;
+  padding-bottom: 16px;
+  padding-right: 8px;
+  cursor: pointer;
+}
+.artistNameAlbum {
+  color: rgb(170, 170, 170);
+  transition: all 0.2s;
+}
+.albumText {
+  text-align: center;
+  margin: 12px 0 4px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.015em;
+  .artistNameAlbum {
+    margin: 0px;
+  }
+}
+.albumType {
+  width: 100%;
+  display: flex;
+  align-content: flex-start;
+  flex-flow: row wrap;
+  align-content: space-around;
+}
+.menu-list {
+  transition: all 0.2s;
+  position: absolute;
+  transform: translateY(-20%);
+  z-index: 100;
+  color: #b3b3b3;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  background-color: #282828;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  outline: none;
+}
+.menu-item {
+  width: 100%;
+  padding: 3px 20px;
+  clear: both;
+  line-height: 32px;
+  white-space: nowrap;
+  background: 0 0;
+  border: 0;
+  cursor: default;
+}
+.menu-item:hover {
+  color: white;
+  width: auto;
+  background-color: #333;
+}
+.button {
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  margin: auto;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  border: 0px;
+  outline: none;
+  border-radius: 500px;
+  padding: 13px;
+  line-height: 1.6;
+  vertical-align: middle;
+  display: block;
+  min-width: 130px;
+  text-align: center;
+}
+.buttonArrow {
+  height: 12px;
+  width: 12px;
+  padding-left: 5px;
+}
+.button:hover {
+  font-size: 13px;
+}
+.Sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  position: absolute;
+  padding-left: 24px;
+  width: 206px;
+  height: 90%;
+  top: 0;
+  left: 0;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.015em;
+  color: #b3b3b3;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.optionText {
+  margin-left: 10px;
+}
+.imgText {
+  padding-bottom: auto;
+  position: absolute;
+  margin-left: 15px;
+}
+.SidebarHeader {
+  font-size: 23px;
+  text-align: left;
+  padding-bottom: 18px;
+}
+.SidebarOptionsContainer {
+  width: 240px;
+  height: 120px;
+}
+.SidebarOptions {
+  height: 40px;
+}
+.RecentlyPlayed {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.recentName {
+  font-size: 14px;
+}
+.recentName:hover {
+  color: white;
+}
+.type {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+.SidebarRecents {
+  height: 438px;
+}
+.allAlbums {
+  margin-left: 254px;
+}
+.Install {
+  height: 40px;
+  width: 206px;
+  border-bottom: 1px solid #404040;
+}
+.sidebarContainer {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 90%;
+}
+.logo {
+  height: 40px;
+  width: 40px;
+}
+.User {
+  text-align: left;
+  height: 40px;
+  margin-top: 20px;
+  padding-bottom: auto;
+  margin-top: 10;
+}
+.InstallText {
+  margin-left: 15px;
+}
+.recentElement {
+  height: 46px;
+}
+.userText {
+  margin-top: 10px;
+  margin-left: 15px;
+}
+.iconImg {
+  height: 25px;
+  width: 25px;
+}
+.InstallIcon {
+  height: 20px;
+  width: 20px;
+}
+.sidebaroptions:hover {
+  color: white;
+}

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/style.css">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/style.css" />
     <title>FEC Demo</title>
   </head>
   <body>
-    <div id="Info"></div>
-    <div id="CountDown"></div>
+    <div id="Header"></div>
+    <div id="Bodyalbum"></div>
     <div id="Related"></div>
-    <div id="Reviews"></div>
+    <div id="Toptracks"></div>
     <script src="/lib/react.development.js"></script>
     <script src="/lib/react-dom.development.js"></script>
     <script src="http://localhost:3001/app.js"></script>
@@ -19,20 +19,20 @@
     <!-- see: https://reactjs.org/docs/react-without-jsx.html -->
     <script>
       ReactDOM.render(
-        React.createElement(Info),
-        document.getElementById('Info')
+        React.createElement(Header),
+        document.getElementById('Header')
       );
       ReactDOM.render(
-        React.createElement(CountDown),
-        document.getElementById('CountDown')
+        React.createElement(Bodyalbum),
+        document.getElementById('Bodyalbum')
       );
       ReactDOM.render(
         React.createElement(Related),
         document.getElementById('Related')
       );
       ReactDOM.render(
-        React.createElement(Reviews),
-        document.getElementById('Reviews')
+        React.createElement(Toptracks),
+        document.getElementById('Toptracks')
       );
     </script>
   </body>

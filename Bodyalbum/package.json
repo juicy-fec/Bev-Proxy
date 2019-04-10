@@ -1,0 +1,68 @@
+{
+  "name": "",
+  "version": "",
+  "description": "display album elements",
+  "author": "Bevan",
+  "license": "MIT",
+  "engines": {
+    "node": ">=6.13.0"
+  },
+  "scripts": {
+    "allDock": "node server/server.js",
+    "all": "npm run react-dev & npm run server-dev & npm run mongod",
+    "react-dev": "webpack -d --watch",
+    "server-dev": "nodemon server/server.js",
+    "seed-data": "node server/database/SeedData.js",
+    "mongod": "mongod --config /usr/local/etc/mongod.conf",
+    "test": "jest --no-cache --detectOpenHandles",
+    "coverage": "jest --no-cache --coverage --colors"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(css|less|scss)$": "<rootDir>/client/stylesheets/"
+    },
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/client/src/stylesheets/"
+    ]
+  },
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^5.4.20",
+    "nodemon": "^1.18.10",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "node-fetch": "^2.3.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.11.0",
+    "webpack": "^3.11.0",
+    "webpack-cli": "^3.3.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^24.5.0",
+    "babel-loader": "^8.0.0-beta.6",
+    "chai": "^4.2.0",
+    "css-loader": "^2.1.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.11.2",
+    "eslint": "^5.15.3",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "eslint-plugin-import": "^2.16.0",
+    "gulp-babel": "^8.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.5.0",
+    "jest-enzyme": "^7.0.2",
+    "mocha": "^6.0.2",
+    "react-test-renderer": "^16.8.6",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1"
+  }
+}
