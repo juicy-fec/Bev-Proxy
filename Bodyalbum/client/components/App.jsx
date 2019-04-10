@@ -1,7 +1,7 @@
 import AlbumsList from './AlbumsList.jsx';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Sidebar from './Sidebar.jsx';
+import './Album.scss';
 const App = () => {
   return (
     <div>
@@ -10,5 +10,6 @@ const App = () => {
     </div>
   );
 };
+export default App;
 // ReactDOM.render(<AlbumsList />, document.getElementById('app'));
-ReactDOM.render(<App />, document.getElementById('app'));
+// ReactDOM.render(<App />, document.getElementById('app'));

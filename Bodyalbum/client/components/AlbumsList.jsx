@@ -2,16 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Album from './Album.jsx';
 import fetch from 'node-fetch';
+// import './Album.scss';
 class AlbumsList extends React.Component {
   constructor(props) {
     super(props);
-    this.artistName = this.props.artistName ? this.props.artistName : 'The Ascending Critics';
+    this.artistName = this.props.artistName
+      ? this.props.artistName
+      : 'The Ascending Critics';
     // this.artistName = 'The Rainbow Equinox';
     this.albumListTypes = [
       'albumsbyartist',
       'epswithartist',
       'compilationswithartist',
-      'albumswithartist',
+      'albumswithartist'
     ];
     this.state = {
       albums: [],
@@ -21,7 +24,7 @@ class AlbumsList extends React.Component {
       showMoreAlb: true,
       showMoreEPs: true,
       showMoreComp: true,
-      showMoreAppears: true,
+      showMoreAppears: true
     };
   }
   componentDidMount() {
@@ -49,7 +52,10 @@ class AlbumsList extends React.Component {
         onClick={this.showMoreClickHandler.bind(this)}
       >
         {swap ? 'Show More' : 'Show Less'}
-        <img className="buttonArrow" src={swap ? 'images/downArrow.png' : 'images/upArrow.png'} />
+        <img
+          className="buttonArrow"
+          src={swap ? 'images/downArrow.png' : 'images/upArrow.png'}
+        />
       </button>
     );
   }
@@ -72,7 +78,7 @@ class AlbumsList extends React.Component {
             albums: AlbumsByType[0],
             eps: AlbumsByType[1],
             compilations: AlbumsByType[2],
-            appearsOn: AlbumsByType[3],
+            appearsOn: AlbumsByType[3]
           });
         });
       });
@@ -81,10 +87,13 @@ class AlbumsList extends React.Component {
     let options = {
       method: 'GET',
       headers: {
-        'Content-Type': 'application/json',
-      },
+        'Content-Type': 'application/json'
+      }
     };
-    return fetch(`http://localhost:3242/data/${type}/${this.artistName}`, options);
+    return fetch(
+      `http://localhost:3242/data/${type}/${this.artistName}`,
+      options
+    );
   }
   fetchPromiseGenerator() {
     var fetches = [];
@@ -101,7 +110,13 @@ class AlbumsList extends React.Component {
 
     if (type !== undefined && type.length > 0) {
       typeCl.map(album =>
-        element.push(<Album picURL={album.image} name={album.name} artistName={this.artistName} />),
+        element.push(
+          <Album
+            picURL={album.image}
+            name={album.name}
+            artistName={this.artistName}
+          />
+        )
       );
       return element;
     }

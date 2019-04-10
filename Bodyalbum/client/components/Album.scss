@@ -141,7 +141,7 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: top;
-  position: absolute;
+  position: fixed;
   padding-left: 24px;
   width: 206px;
   height: 90%;
@@ -209,7 +209,7 @@ img {
   left: 0;
   height: 90%;
 }
-.logo {
+.Logo {
   height: 40px;
   width: 40px;
 }
@@ -238,6 +238,6 @@ img {
   height: 20px;
   width: 20px;
 }
-.sidebaroptions:hover {
+.SidebarOptions:hover {
   color: white;
 }

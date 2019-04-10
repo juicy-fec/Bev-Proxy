@@ -8,6 +8,7 @@
     "node": ">=6.13.0"
   },
   "scripts": {
+    "start": "node server/server.js",
     "allDock": "node server/server.js",
     "all": "npm run react-dev & npm run server-dev & npm run mongod",
     "react-dev": "webpack -d --watch",

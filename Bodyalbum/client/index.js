@@ -1,3 +1,3 @@
-import CountDown from './components/App.jsx';
+import App from './components/App.jsx';
 
-window.Bodyalbum = Bodyalbum;
+window.Bodyalbum = App;
