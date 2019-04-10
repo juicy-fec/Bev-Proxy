@@ -1,0 +1,165 @@
+.btn-container-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 80px;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  display: flex;
+  background-color: #181818;
+}
+.btn-container-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 80px;
+}
+
+.listeners-container {
+  display: flex;
+  justify-content: center;
+  line-height: 16px;
+  padding-top: 100px;
+}
+
+.img-header {
+  display: flex;
+  flex-direction: column;
+  // background-size: auto;
+  height: 895px;
+  width: 1080px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  color:  #fff;
+  font-size: 72px;
+  margin: 0px 166px;
+  line-height: 82px;
+  letter-spacing: -.005em;
+
+}
+
+.btn-play {
+  color: #FFFFFF;
+  font: 11px;
+  height: 39px;
+  background-color: #1DB954;
+  border-color: #1DB954;
+  text-transform: uppercase;
+  margin-top: 16px;
+  margin-bottom: 0px;
+  margin-right: 15px;
+  margin-left: 0px;
+  padding: 11px 44px;
+  border-radius: 500px;
+  transition: transform .2s;
+}
+
+.btn-save {
+  color: #FFFFFF;
+  font: 11px;
+  height: 39px;
+  background-color: rgba(24, 24, 24, 0.7);
+  text-transform: uppercase;
+  margin-top: 16px;
+  margin-bottom: 0px;
+  margin-right: 15px;
+  margin-left: 0px;
+  padding: 11px 44px;
+  border-radius: 500px;
+  transition: transform .2s;
+}
+
+.btn-play:hover, .btn-save:hover {
+  filter: brightness(120%);
+  transform: scale(1.05);
+}
+
+.dropdown {
+  display: flex;
+  color: #FFFFFF;
+  font: 9px;
+  height: 39px;
+  background-color: rgba(24, 24, 24, 0.7);
+  background-color: Transparent;
+  margin-top: 25px;
+  margin-bottom: 0px;
+  margin-right: 15px;
+  margin-left: 0px;
+  padding: 11px 0px;
+  border-width: 2px;
+  border-radius: 500px;
+  height: 51;
+  width: 64;
+}
+
+.menu-option {
+  color: #B3B3B3;
+  margin: 0px 0px 3px 0px;
+  border-width: 125%;
+  height: 125%;
+}
+
+.menu-option:hover {
+  color: #FFF;
+  background-color: #333;
+  border-color: #333;
+
+}
+
+.fa-ellipsis-h {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btn-overview {
+  color: #FFFFFF;
+  opacity: 0.6;
+  background-color: Transparent;
+  border: none;
+  font: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  margin: 10px;
+  padding: 5px 10px;
+  border-bottom: 3px solid Transparent;
+}
+
+.btn-related-artists {
+  color: #FFFFFF;
+  opacity: 0.6;
+  background-color: Transparent;
+  border: none;
+  font: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  margin: 10px;
+  padding: 5px 10px;
+  border-bottom: 3px solid Transparent;
+}
+
+.btn-about {
+  color: #FFF;
+  opacity: 0.6;
+  background-color: Transparent;
+  border: none;
+  font: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  margin: 10px;
+  padding: 5px 10px;
+  border-bottom: 3px solid Transparent;
+
+}
+
+.btn-overview:hover, .btn-related-artists:hover, .btn-about:hover {
+  border-bottom: 3px solid #1DB954;
+  opacity: 1;
+}
