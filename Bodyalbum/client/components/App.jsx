@@ -11,5 +11,3 @@ const App = () => {
   );
 };
 export default App;
-// ReactDOM.render(<AlbumsList />, document.getElementById('app'));
-// ReactDOM.render(<App />, document.getElementById('app'));
