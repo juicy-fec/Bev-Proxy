@@ -2,7 +2,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: path.join(__dirname, '/src/client/index.js'),
+  entry: path.join(__dirname, '/src/client/index.jsx'),
   module: {
     rules: [
       {
@@ -18,6 +18,6 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, '/public'),
-    filename: 'app.js'
+    filename: 'related.js'
   }
 };
