@@ -1,9 +1,9 @@
 module.exports = {
-  entry: `${__dirname}/client/src/index.js`,
+  entry: `${__dirname}/client/src/index.jsx`,
   module: {
     rules: [
       {
-        test: /\.jsx$/,
+        test: [/\.jsx$/],
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -13,13 +13,13 @@ module.exports = {
         }
       },
       {
-        test:/\.(s*)css$/,
-        use:['style-loader','css-loader', 'sass-loader']
-      },
+        test: /\.(s*)css$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      }
     ]
   },
   output: {
-    filename: 'app.js',
+    filename: 'toptracks.js',
     path: `${__dirname}/client/dist`
   }
 };
