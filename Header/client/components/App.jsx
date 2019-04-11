@@ -8,32 +8,32 @@ import '../styles.scss';
 
 class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     let _isMounted = false;
 
     this.state = {
       name: '',
       header_img: ''
-    }
+    };
 
     this.getArtistState = this.getArtistState.bind(this);
   }
 
   getArtistState(id) {
-    fetch(`http://localhost:3004/data/artist/${id}`)
+    fetch(`http://localhost:3003/data/artist/${id}`)
       .then(result => result.json())
       .then(data => {
         if (this._isMounted) {
-          this.setState({ name: data.name, header_img: data.header_img})
+          this.setState({ name: data.name, header_img: data.header_img });
         }
-      })
+      });
   }
 
   componentDidMount() {
     // 2
     this._isMounted = true;
-    this.getArtistState('5c9e8a06deeb8c28571e26a4')
+    this.getArtistState('5c9e8a06deeb8c28571e26a4');
   }
 
   componentWillUnmount() {
@@ -43,10 +43,10 @@ class App extends React.Component {
   render() {
     let divStyle = {
       backgroundImage: `url(${this.state.header_img})`
-    }
+    };
     return (
       <div className="img-header" style={divStyle}>
-        <div className="listeners-container"></div>
+        <div className="listeners-container" />
         <h1 className="title">{this.state.name}</h1>
         <div className="btn-container-top">
           <button className="btn-play">play</button>
@@ -59,8 +59,7 @@ class App extends React.Component {
           <button className="btn-about">about</button>
         </div>
       </div>
-
-    )
+    );
   }
 }
 
