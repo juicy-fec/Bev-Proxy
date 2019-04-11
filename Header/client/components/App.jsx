@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+// import {BrowserRouter, Route, Link} from 'react-router-dom';
+
 import fetch from 'node-fetch';
 
 import Dropdown from './Dropdown.jsx';
+import About from './About.jsx';
+import Overview from './Overview.jsx';
+import RelatedArtists from './RelatedArtists.jsx';
+
 import '../styles.scss';
 
-class App extends React.Component {
+class Header extends PureComponent {
   constructor(props) {
     super(props);
 
@@ -21,19 +27,20 @@ class App extends React.Component {
   }
 
   getArtistState(id) {
+    console.log('fetch', id);
     fetch(`http://localhost:3003/data/artist/${id}`)
       .then(result => result.json())
       .then(data => {
         if (this._isMounted) {
-          this.setState({ name: data.name, header_img: data.header_img });
+          console.log('recieved: ', data);
+          this.setState({ name: data[0].name, header_img: data[0].header_img });
         }
       });
   }
 
   componentDidMount() {
-    // 2
     this._isMounted = true;
-    this.getArtistState('5c9e8a06deeb8c28571e26a4');
+    this.getArtistState('The Ascending Critics');
   }
 
   componentWillUnmount() {
@@ -44,24 +51,41 @@ class App extends React.Component {
     let divStyle = {
       backgroundImage: `url(${this.state.header_img})`
     };
+
+    const routing = (
+      <Router>
+        <div className="btn-container-bottom">
+          <Link to="/">
+            <button className="btn-overview">overview</button>
+          </Link>
+          <Link to="/relatedartists">
+            <button className="btn-related-artists">related artists</button>
+          </Link>
+          <Link to="/about">
+            <button className="btn-about">about</button>
+          </Link>
+        </div>
+        <div className="body-component">
+          <Route exact path="/" component={Overview} />
+          <Route path="/relatedartists" component={RelatedArtists} />
+          <Route path="/about" component={About} />
+        </div>
+      </Router>
+    );
+
     return (
       <div className="img-header" style={divStyle}>
-        <div className="listeners-container" />
+        <div className="listeners-container">2,475,356 monthly listeners</div>
         <h1 className="title">{this.state.name}</h1>
         <div className="btn-container-top">
           <button className="btn-play">play</button>
           <button className="btn-save">save to your library</button>
           <Dropdown />
         </div>
-        <div className="btn-container-bottom">
-          <button className="btn-overview">overview</button>
-          <button className="btn-related-artists">related artists</button>
-          <button className="btn-about">about</button>
-        </div>
+        <div>{routing}</div>
       </div>
     );
   }
 }
 
-// ReactDOM.render(<App />, document.getElementById('app') || document.createElement('div'));
-export default App;
+export default Header;

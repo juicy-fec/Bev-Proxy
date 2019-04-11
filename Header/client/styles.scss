@@ -4,12 +4,7 @@
   justify-content: center;
   height: 80px;
 }
-body {
-  font-family: 'Montserrat', sans-serif;
-  width: 100%;
-  display: flex;
-  background-color: #181818;
-}
+
 .btn-container-bottom {
   display: flex;
   flex-direction: row;
@@ -20,6 +15,11 @@ body {
 .listeners-container {
   display: flex;
   justify-content: center;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0.6;
+  letter-spacing: 0.16em;
   line-height: 16px;
   padding-top: 100px;
 }
@@ -27,28 +27,29 @@ body {
 .img-header {
   display: flex;
   flex-direction: column;
-  // background-size: auto;
-  height: 895px;
-  width: 1080px;
+  // background-size: stretch;
+  height: 425px;
+  width: 100%;
 }
 
 .title {
   display: flex;
   justify-content: center;
-  color:  #fff;
+  color: #fff;
+  font-family: Arial, Helvetica Neue, sans-serif;
   font-size: 72px;
   margin: 0px 166px;
   line-height: 82px;
-  letter-spacing: -.005em;
-
+  letter-spacing: -0.005em;
+  text-transform: capitalize;
 }
 
 .btn-play {
-  color: #FFFFFF;
+  color: #ffffff;
   font: 11px;
   height: 39px;
-  background-color: #1DB954;
-  border-color: #1DB954;
+  background-color: #1db954;
+  border-color: #1db954;
   text-transform: uppercase;
   margin-top: 16px;
   margin-bottom: 0px;
@@ -56,11 +57,12 @@ body {
   margin-left: 0px;
   padding: 11px 44px;
   border-radius: 500px;
-  transition: transform .2s;
+  transition: transform 0.2s;
+  letter-spacing: 0.1em;
 }
 
 .btn-save {
-  color: #FFFFFF;
+  color: #ffffff;
   font: 11px;
   height: 39px;
   background-color: rgba(24, 24, 24, 0.7);
@@ -71,17 +73,19 @@ body {
   margin-left: 0px;
   padding: 11px 44px;
   border-radius: 500px;
-  transition: transform .2s;
+  transition: transform 0.2s;
+  letter-spacing: 0.1em;
 }
 
-.btn-play:hover, .btn-save:hover {
+.btn-play:hover,
+.btn-save:hover {
   filter: brightness(120%);
   transform: scale(1.05);
 }
 
 .dropdown {
   display: flex;
-  color: #FFFFFF;
+  color: #ffffff;
   font: 9px;
   height: 39px;
   background-color: rgba(24, 24, 24, 0.7);
@@ -98,68 +102,100 @@ body {
 }
 
 .menu-option {
-  color: #B3B3B3;
+  color: #b3b3b3;
   margin: 0px 0px 3px 0px;
   border-width: 125%;
   height: 125%;
+  width: 100%;
+  padding: 3px 20px;
+  clear: both;
+  line-height: 32px;
+  white-space: nowrap;
+  background: 0 0;
+  border: 0;
+  cursor: default;
 }
 
 .menu-option:hover {
-  color: #FFF;
+  color: #fff;
   background-color: #333;
   border-color: #333;
-
+  width: auto;
 }
 
 .fa-ellipsis-h {
   display: flex;
   justify-content: flex-start;
+  transform: scale(1.1);
+}
+
+.fa-ellipsis-h:hover {
+  transform: scale(1.2);
 }
 
 .btn-overview {
-  color: #FFFFFF;
+  color: #ffffff;
   opacity: 0.6;
   background-color: Transparent;
   border: none;
   font: 12px;
   line-height: 16px;
   text-transform: uppercase;
-  letter-spacing: .16em;
+  letter-spacing: 0.16em;
   margin: 10px;
   padding: 5px 10px;
   border-bottom: 3px solid Transparent;
 }
 
 .btn-related-artists {
-  color: #FFFFFF;
+  color: #ffffff;
   opacity: 0.6;
   background-color: Transparent;
   border: none;
   font: 12px;
   line-height: 16px;
   text-transform: uppercase;
-  letter-spacing: .16em;
+  letter-spacing: 0.16em;
   margin: 10px;
   padding: 5px 10px;
   border-bottom: 3px solid Transparent;
 }
 
 .btn-about {
-  color: #FFF;
+  color: #fff;
   opacity: 0.6;
   background-color: Transparent;
   border: none;
   font: 12px;
   line-height: 16px;
   text-transform: uppercase;
-  letter-spacing: .16em;
+  letter-spacing: 0.16em;
   margin: 10px;
   padding: 5px 10px;
   border-bottom: 3px solid Transparent;
-
 }
 
-.btn-overview:hover, .btn-related-artists:hover, .btn-about:hover {
-  border-bottom: 3px solid #1DB954;
+.btn-play:focus,
+.btn-save:focus {
+  outline: 0;
+}
+
+.btn-overview:hover,
+.btn-related-artists:hover,
+.btn-about:hover {
+  opacity: 0.8;
+}
+
+.btn-overview:focus,
+.btn-related-artists:focus,
+.btn-about:focus {
+  outline: 0;
+  border-bottom: 3px solid #1db954;
   opacity: 1;
+}
+
+.body-component {
+  display: flex;
+  justify-content: center;
+  font: white;
 }

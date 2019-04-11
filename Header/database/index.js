@@ -9,27 +9,27 @@ const collection = mongoose.connection;
 // Schema for database
 const artistSchema = new Schema({
   name: String,
-  header_img: String,
+  header_img: String
 });
 
 // Instantiation of mongoose model
 const Artist = mongoose.model('Artist', artistSchema);
 
 // Model for GET by id
-const getArtist = (id) => {
-  return Artist.findById(id, 'name header_img -_id').exec();
+const getArtist = id => {
+  return Artist.find({ name: id }).exec();
 };
 
 // Model for POST
-const save = (artist) => {
+const save = artist => {
   const newArtist = new Artist({
     name: artist.name,
-    header_img: artist.header_img,
+    header_img: artist.header_img
   });
 
-  newArtist.save((err) => {
+  newArtist.save(err => {
     // eslint-disable-next-line no-unused-expressions
-    err ? console.log(err) : console.log('New artist added to database')
+    err ? console.log(err) : console.log('New artist added to database');
   });
 };
 

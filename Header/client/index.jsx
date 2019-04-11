@@ -1,8 +1,5 @@
-import App from './components/App.jsx';
+import Header from './components/App.jsx'
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('Header') || document.createElement('div')
-);
+ReactDOM.render(<Header />, document.getElementById('Header') || document.createElement('div'));

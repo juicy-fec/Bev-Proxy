@@ -37,14 +37,27 @@ const seedData = () => {
     .then(arr => imagesArray.push(arr.slice()))
     .then(() => generateNamePromise())
     .then(result => result.json())
-    .then(data => data.results.map(element => `${element.name.first} ${element.name.last}`))
+    .then(data =>
+      data.results.map(element => `${element.name.first} ${element.name.last}`)
+    )
     .then(arr => namesArray.push(arr.slice()))
     .then(() => {
       for (let i = 0; i < namesArray[0].length; i += 1) {
-        seedObjectsArray.push({ name: namesArray[0][i], header_img: imagesArray[0][i] })
+        seedObjectsArray.push({
+          name: namesArray[0][i],
+          header_img: imagesArray[0][i]
+        });
       }
     })
     .then(() => seedObjectsArray.forEach(obj => db.save(obj)))
+    .then(() => {
+      let guarArtist = {
+        name: 'The Ascending Critics',
+        header_img:
+          'https://images.unsplash.com/photo-1511474165089-bf211f27af3b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&h=720&fit=crop&ixid=eyJhcHBfaWQiOjF9'
+      };
+      db.save(guarArtist);
+    });
 };
 
 // Call function to save

@@ -10,7 +10,6 @@ class Dropdown extends Component {
       menuPosition: { top: 0, left: 0 },
     };
 
-    // this.handleClick = this.handleClick.bind(this);
     this.showDropdownMenu = this.showDropdownMenu.bind(this);
     this.hideDropdownMenu = this.hideDropdownMenu.bind(this);
   }
@@ -31,19 +30,12 @@ class Dropdown extends Component {
   }
 
   render() {
+    let { displayMenu } = this.state;
 
-    let menu;
-    if (this.state.displayMenu) {
-      console.log('showing menu');
-      menu = <DropdownMenu pos={this.state.menuPosition} />;
-    } else {
-      console.log('not showing menu');
-      menu = <div />;
-    }
     return (
       <div className="dropdown">
         <div data-testid="ellipsis-btn" onClick={this.showDropdownMenu}><i className="fas fa-ellipsis-h"></i></div>
-        {menu}
+        { displayMenu && <DropdownMenu pos={this.state.menuPosition} />}
       </div>
     )
   }

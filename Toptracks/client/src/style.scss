@@ -4,6 +4,7 @@ body {
 
 #content {
   margin-left: 230px;
+  margin-right: 40px;
 }
 
 #left {
@@ -17,7 +18,7 @@ body {
   font-weight: 600;
   font-size: 36px;
   line-height: 44px;
-  letter-spacing: -.005em;
+  letter-spacing: -0.005em;
   margin: 24px 0;
 }
 
@@ -30,7 +31,7 @@ i {
   font-family: Helvetica Neue;
   font-weight: 300;
   line-height: 22px;
-  letter-spacing: .015em;
+  letter-spacing: 0.015em;
   color: #fff;
 }
 
@@ -76,11 +77,11 @@ i {
   display: none;
 }
 
-.flex1:hover .fa-play{
+.flex1:hover .fa-play {
   display: inline;
 }
 
-.flex1:hover .fa-music{
+.flex1:hover .fa-music {
   display: none;
 }
 
@@ -90,7 +91,7 @@ i {
   display: none;
 }
 
-.flex1:hover .ellipsis{
+.flex1:hover .ellipsis {
   display: inline;
 }
 
@@ -123,7 +124,8 @@ i {
   transition: all 0.3s ease;
 }
 
-.fa-play-circle, .fa-pause-circle {
+.fa-play-circle,
+.fa-pause-circle {
   font-size: 2em;
 }
 
@@ -138,7 +140,7 @@ i {
 .songTime {
   font-size: 11px;
   line-height: 16px;
-  letter-spacing: .015em;
+  letter-spacing: 0.015em;
   min-width: 40px;
   text-align: center;
 }
@@ -151,10 +153,10 @@ i {
 .aTrackName {
   color: #fff;
   font-size: 14px;
-  letter-spacing: .015em;
+  letter-spacing: 0.015em;
 }
 
 .aArtistName {
   font-size: 12px;
-  letter-spacing: .015em;
+  letter-spacing: 0.015em;
 }

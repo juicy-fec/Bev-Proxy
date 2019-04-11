@@ -3,9 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 function AudioPlayer({ currentTrack }) {
-  const {
-    name, artist, image, length 
-  } = currentTrack;
+  const { name, artist, image, length } = currentTrack;
 
   return (
     <Player data-testid="audio-player">
@@ -14,12 +12,12 @@ function AudioPlayer({ currentTrack }) {
           {image ? <img src={image} alt="albumImage" /> : null}
         </div>
         <LeftInnerFlex>
-          <div data-testid="left-flex-track" className="aTrackName">{name}</div>
+          <div data-testid="left-flex-track" className="aTrackName">
+            {name}
+          </div>
           <div className="aArtistName">{artist}</div>
         </LeftInnerFlex>
-        <Icon>
-          {image ? <i className="fas fa-plus" /> : null}
-        </Icon>
+        <Icon>{image ? <i className="fas fa-plus" /> : null}</Icon>
       </LeftFlex>
       <CenterFlex>
         <CenterTopFlex>
@@ -30,7 +28,11 @@ function AudioPlayer({ currentTrack }) {
             <i className="fas fa-step-backward" />
           </Icon>
           <Icon>
-            {image ? <i className="far fa-pause-circle" /> : <i className="far fa-play-circle" />}
+            {image ? (
+              <i className="far fa-pause-circle" />
+            ) : (
+              <i className="far fa-play-circle" />
+            )}
           </Icon>
           <Icon>
             <i className="fas fa-step-forward" />
@@ -71,40 +73,41 @@ AudioPlayer.propTypes = {
     name: PropTypes.string,
     artist: PropTypes.string,
     image: PropTypes.string,
-    length: PropTypes.string,
+    length: PropTypes.string
   }).isRequired
 };
 
 export default AudioPlayer;
 
 const Player = styled.div`
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 90px;
-    color: #b3b3b3;
-    background-color: #272727;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: Helvetica Neue;
-    font-weight: 300;
-  `;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 20;
+  width: 100%;
+  height: 10%;
+  color: #b3b3b3;
+  background-color: #272727;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Helvetica Neue;
+  font-weight: 300;
+`;
 
 const LeftFlex = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    position: relative;
-    margin-left: 20px;
-    div div:hover {
-      color: white;
-      text-decoration: underline;
-    }
-  `;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  margin-left: 20px;
+  div div:hover {
+    color: white;
+    text-decoration: underline;
+  }
+`;
 
 const CenterFlex = styled.div`
     display: flex;
@@ -117,11 +120,11 @@ const CenterFlex = styled.div`
   `;
 
 const RightFlex = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-right: 20px;
-  `;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 20px;
+`;
 
 const LeftInnerFlex = styled.div`
   display: flex;

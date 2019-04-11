@@ -1,14 +1,22 @@
-#Info {
-  display: block;
+#HeaderContMount {
+  height: 400px;
+  width: 100%;
+  align-items: center;
+  position: relative;
+  /* display: inline-block; */
+  top: 0;
+  margin-left: -230px;
+  padding-left: 230px;
+  /* padding-right: 230px; */
 }
-
-#CountDown {
-  margin-left: 5px;
-  display: inline-block;
+.bodyComp {
+  position: flex;
+  flex-direction: column;
 }
-
+#Toptracks {
+  width: auto;
+  margin-left: 20px;
+}
 #Related {
-  margin: 10%;
-  display: block;
+  margin-left: 254px;
 }
-
