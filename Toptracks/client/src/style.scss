@@ -1,0 +1,160 @@
+body {
+  background-color: #181818;
+}
+
+#content {
+  margin-left: 230px;
+}
+
+#left {
+  background-color: #050505;
+  width: 230px;
+}
+
+#header {
+  color: #fff;
+  font-family: Helvetica Neue;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -.005em;
+  margin: 24px 0;
+}
+
+i {
+  color: #9f9f9f;
+}
+
+.trackName {
+  font-size: 16px;
+  font-family: Helvetica Neue;
+  font-weight: 300;
+  line-height: 22px;
+  letter-spacing: .015em;
+  color: #fff;
+}
+
+.trackLength {
+  color: #a3a3a3;
+  margin-right: 13.83px;
+  font-family: Helvetica Neue;
+}
+
+.flex1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  transition: all 0.5s ease;
+}
+
+.flex1:hover {
+  background-color: #111;
+}
+
+.flex2 {
+  display: flex;
+  align-items: center;
+}
+
+.flex3 {
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  margin-right: 13.83px;
+}
+
+.icon {
+  margin-right: 13.83px;
+  width: 42px;
+  text-align: right;
+}
+
+.fa-play {
+  display: none;
+}
+
+.flex1:hover .fa-play{
+  display: inline;
+}
+
+.flex1:hover .fa-music{
+  display: none;
+}
+
+.ellipsis {
+  margin-right: 13.83px;
+  width: 50px;
+  display: none;
+}
+
+.flex1:hover .ellipsis{
+  display: inline;
+}
+
+.contextMenu {
+  height: 190px;
+  width: 168px;
+  background-color: #282828;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-top: 126px;
+  opacity: 100%;
+}
+
+.contextMenu div {
+  padding: 3px 20px;
+  clear: both;
+  line-height: 32px;
+  white-space: nowrap;
+  background: 0 0;
+  border: 0;
+  font-size: 14px;
+  color: #b3b3b3;
+  font-family: Helvetica Neue;
+}
+
+.contextMenu div:hover {
+  color: #fff;
+  background-color: #333;
+  transition: all 0.3s ease;
+}
+
+.fa-play-circle, .fa-pause-circle {
+  font-size: 2em;
+}
+
+.progress {
+  width: 400px;
+}
+
+.volume {
+  width: 84px;
+}
+
+.songTime {
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: .015em;
+  min-width: 40px;
+  text-align: center;
+}
+
+.fa-circle {
+  color: white;
+  font-size: 0.75em;
+}
+
+.aTrackName {
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: .015em;
+}
+
+.aArtistName {
+  font-size: 12px;
+  letter-spacing: .015em;
+}
