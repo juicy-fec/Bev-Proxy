@@ -1,9 +1,11 @@
 const express = require('express');
 const path = require('path');
 const db = require('../database/schema');
+const cors = require('cors');
 
 
 const app = express();
+app.use(cors());
 const port = 3100;
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

@@ -9,7 +9,8 @@
     "testcoverage": "jest --coverage --colors --detectOpenHandles",
     "client": "webpack -d --watch",
     "server": "nodemon server/server.js",
-    "data": "node server/db.js"
+    "data": "node server/db.js",
+    "proxy": "npm run client & npm run server & npm run data"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "babel-jest": "^24.5.0",
     "babel-plugin-dynamic-import-node": "^2.2.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "mongoose": "^5.4.20",
     "morgan": "^1.9.1",

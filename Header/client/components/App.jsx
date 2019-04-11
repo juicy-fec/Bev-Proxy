@@ -21,7 +21,7 @@ class App extends React.Component {
   }
 
   getArtistState(id) {
-    fetch(`http://localhost:3002/data/artist/${id}`)
+    fetch(`http://localhost:3004/data/artist/${id}`)
       .then(result => result.json())
       .then(data => {
         if (this._isMounted) {

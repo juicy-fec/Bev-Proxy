@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import fetch from 'node-fetch';
 import PopularList from './PopularList.jsx';
 import '../style.scss';
 import AudioPlayer from './AudioPlayer.jsx';
 
-class App extends Component {
+class App extends React.Component {
   constructor() {
     super();
     this.state = {
       tracks: [],
-      currentTrack: {},
+      currentTrack: {}
     };
     this.setCurrentTrack = this.setCurrentTrack.bind(this);
   }
@@ -19,9 +19,9 @@ class App extends Component {
   }
 
   getTopTracks() {
-    fetch('http://localhost:3003/data/toptracks')
+    fetch('http://localhost:3004/data/toptracks')
       .then(results => results.json())
-      .then((tracks) => {
+      .then(tracks => {
         this.setState({ tracks });
       })
       .catch(console.log);
@@ -42,13 +42,13 @@ class App extends Component {
     const { tracks, currentTrack } = this.state;
     const { setCurrentTrack } = this;
     if (!tracks) return null;
-   
+
     return (
       <div id="main" data-testid="popular-main">
         <div id="left" />
         <div id="content">
           <h1 id="header">Popular</h1>
-          <PopularList 
+          <PopularList
             data-testid="popular-list"
             tracks={tracks}
             setCurrentTrack={setCurrentTrack}

@@ -9,7 +9,8 @@
     "seed-database": "node server/seedData.js",
     "test": "jest --detectOpenHandles",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage --colors"
+    "test:coverage": "jest --coverage --colors",
+    "proxy": " npm run build & npm run start & npm run seed-database"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/juicy-fec/ian-header-component#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "eslint-plugin-jest": "^22.4.1",
     "express": "^4.16.4",
     "mongoose": "^5.4.20",

@@ -11,6 +11,7 @@
     "start": "node server/server.js",
     "allDock": "node server/server.js",
     "all": "npm run react-dev & npm run server-dev & npm run mongod",
+    "proxy": "npm run react-dev & npm run server-dev & npm run seed-data",
     "react-dev": "webpack -d --watch",
     "server-dev": "nodemon server/server.js",
     "seed-data": "node server/database/SeedData.js",
@@ -28,12 +29,13 @@
     ]
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.16.2",
     "mongoose": "^5.4.20",
+    "node-fetch": "^2.3.0",
     "nodemon": "^1.18.10",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "node-fetch": "^2.3.0"
+    "react-dom": "^16.2.0"
   },
   "devDependencies": {
     "node-sass": "^4.11.0",
