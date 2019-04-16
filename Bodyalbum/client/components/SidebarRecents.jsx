@@ -7,22 +7,29 @@ class SidebarRecents extends React.Component {
       menuShow: false,
       menuLeft: 0,
       menuTop: 0,
-      clicked: '',
+      clicked: ''
     };
   }
   handleRightClick(e) {
     e.preventDefault();
     let typeOfElement = e.target.className.split(' ').pop();
+    var rect = e.target.getBoundingClientRect();
+
+    let left = e.pageX;
+    let top = rect.top;
     this.setState(
       {
         menuShow: !this.state.menuShow,
-        menuLeft: e.pageX,
-        menuTop: e.pageY,
-        clicked: typeOfElement,
+        menuLeft: left,
+        menuTop: top,
+        clicked: typeOfElement
       },
       () => {
-        document.addEventListener('mousedown', this.hideDropdownMenu.bind(this));
-      },
+        document.addEventListener(
+          'mousedown',
+          this.hideDropdownMenu.bind(this)
+        );
+      }
     );
   }
 
@@ -36,7 +43,10 @@ class SidebarRecents extends React.Component {
       <div className="SidebarRecents" data-test="SidebarRecents">
         {this.props.recents.map(element => {
           return (
-            <div className="recentElement" onContextMenu={this.handleRightClick.bind(this)}>
+            <div
+              className="recentElement"
+              onContextMenu={this.handleRightClick.bind(this)}
+            >
               <Menu
                 left={this.state.menuLeft}
                 top={this.state.menuTop}

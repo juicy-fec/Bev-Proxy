@@ -2,8 +2,10 @@ import React from 'react';
 
 function Overview() {
   return (
-    <h2 style={{color: 'white'}}>Overview</h2>
-  )
+    <div id="Bodyalbum">
+      <iframe src="http://localhost:3242" />
+    </div>
+  );
 }
 
 export default Overview;

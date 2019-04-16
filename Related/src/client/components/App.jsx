@@ -4,8 +4,7 @@ import styled from 'styled-components';
 import ArtistList from './ArtistList.jsx';
 import ArtistMenu from './ArtistMenu.jsx';
 
-
-const widthandheight = (windowsize) => {
+const widthandheight = windowsize => {
   let size;
   const { width } = windowsize;
   if (width < 767) {
@@ -22,7 +21,7 @@ const widthandheight = (windowsize) => {
 
 const AppStyle = styled.div`
   min-height: 100%;
-  background-color: rgb(30,30,30);
+  background-color: rgb(30, 30, 30);
 `;
 
 class App extends React.Component {
@@ -33,7 +32,7 @@ class App extends React.Component {
       artistinfo: {},
       windowsize: { width: '10%', height: '10%' },
       showmenu: false,
-      menuposition: { top: 0, left: 0 },
+      menuposition: { top: 0, left: 0 }
     };
     this.fetchArtistData = this.fetchArtistData.bind(this);
     this.updatewindow = this.updatewindow.bind(this);
@@ -43,6 +42,10 @@ class App extends React.Component {
   componentDidMount() {
     this.fetchArtistData();
     this.updatewindow();
+    const context = this;
+    window.onhashchange = () => {
+      context.forceUpdate();
+    };
     window.addEventListener('resize', this.updatewindow);
     document.addEventListener('contextmenu', this.handlerightclick);
   }
@@ -72,20 +75,27 @@ class App extends React.Component {
 
   fetchArtistData() {
     // need to find an initial artist.
-    fetch(`http://localhost:3100/data/artist?id=${this.state.artistid}`).then((response) => {
-      return response.json();
-    }).then((data) => {
-      this.setState({ artistinfo: data });
-    });
+    fetch(`http://localhost:3100/data/artist?id=${this.state.artistid}`)
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        this.setState({ artistinfo: data });
+      });
   }
-
 
   render() {
     let component;
     if (Object.keys(this.state.artistinfo).length === 0) {
       component = <div>empty</div>;
     } else {
-      component = <ArtistList artist={this.state.artistinfo} size={this.state.windowsize} rightclick={this.handlerightclick} />;
+      component = (
+        <ArtistList
+          artist={this.state.artistinfo}
+          size={this.state.windowsize}
+          rightclick={this.handlerightclick}
+        />
+      );
     }
     let menu;
     if (this.state.showmenu) {
@@ -93,12 +103,16 @@ class App extends React.Component {
     } else {
       menu = <div />;
     }
-    return (
-      <AppStyle>
-        {menu}
-        {component}
-      </AppStyle>
-    );
+    if (window.location.hash === '#related') {
+      return (
+        <AppStyle>
+          {menu}
+          {component}
+        </AppStyle>
+      );
+    } else {
+      return <div />;
+    }
   }
 }
 export default App;

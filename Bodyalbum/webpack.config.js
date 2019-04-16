@@ -5,7 +5,7 @@ require('babel-polyfill');
 const SRC_DIR = path.join(__dirname, '/client');
 const DIST_DIR = path.join(__dirname, '/public');
 module.exports = {
-  entry: ['babel-polyfill', SRC_DIR + '/index.jsx'],
+  entry: ['babel-polyfill', SRC_DIR + '/components/App.jsx'],
   output: {
     path: DIST_DIR,
     filename: 'bodyalbum.js'

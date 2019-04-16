@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import MenuButton from './MenuButton.jsx';
 
-
 class ArtistMenu extends React.Component {
   constructor(props) {
     super(props);
@@ -12,8 +11,8 @@ class ArtistMenu extends React.Component {
 
   updateMenu() {
     this.Menu = styled.div`
-      background-color: rgb(50,50,50);
-      color: rgb(180,180,180);
+      background-color: rgb(50, 50, 50);
+      color: rgb(180, 180, 180);
       position: fixed;
       z-index: 2;
       top: ${this.props.pos.top};

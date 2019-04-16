@@ -95,7 +95,7 @@ i {
   display: inline;
 }
 
-.contextMenu {
+.contextTopMenu {
   height: 190px;
   width: 168px;
   background-color: #282828;
@@ -106,7 +106,7 @@ i {
   opacity: 100%;
 }
 
-.contextMenu div {
+.contextTopMenu div {
   padding: 3px 20px;
   clear: both;
   line-height: 32px;
@@ -118,7 +118,7 @@ i {
   font-family: Helvetica Neue;
 }
 
-.contextMenu div:hover {
+.contextTopMenu div:hover {
   color: #fff;
   background-color: #333;
   transition: all 0.3s ease;

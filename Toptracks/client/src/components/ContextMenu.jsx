@@ -13,7 +13,7 @@ function ContextMenu({ position }) {
   `;
 
   return (
-    <List data-testid="list" className="contextMenu">
+    <List data-testid="list" className="contextTopMenu">
       <div>Start Radio</div>
       <div>Save to Your library</div>
       <div>Add to Queue</div>
@@ -26,7 +26,7 @@ function ContextMenu({ position }) {
 ContextMenu.propTypes = {
   position: PropTypes.shape({
     top: PropTypes.number.isRequired,
-    left: PropTypes.number.isRequired,
+    left: PropTypes.number.isRequired
   }).isRequired
 };
 

@@ -90,10 +90,7 @@ class AlbumsList extends React.Component {
         'Content-Type': 'application/json'
       }
     };
-    return fetch(
-      `http://localhost:3242/data/${type}/${this.artistName}`,
-      options
-    );
+    return fetch(`/data/${type}/${this.artistName}`, options);
   }
   fetchPromiseGenerator() {
     var fetches = [];

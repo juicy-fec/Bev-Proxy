@@ -1,12 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
 class MenuButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hover: false,
+      hover: false
     };
     this.ButtonStyle = '';
     this.updateButton = this.updateButton.bind(this);
@@ -15,11 +14,11 @@ class MenuButton extends React.Component {
   updaterender() {
     if (this.state.hover) {
       this.ButtonStyle = styled.div`
-      background-color: rgb(90,90,90);
+        background-color: rgb(90, 90, 90);
       `;
     } else {
       this.ButtonStyle = styled.div`
-      background-color: rgb(50,50,50);
+        background-color: rgb(50, 50, 50);
       `;
     }
   }
@@ -33,7 +32,12 @@ class MenuButton extends React.Component {
     this.updaterender();
     const { ButtonStyle } = this;
     return (
-      <ButtonStyle onMouseEnter={this.updateButton} onMouseLeave={this.updateButton}>{this.props.text}</ButtonStyle>
+      <ButtonStyle
+        onMouseEnter={this.updateButton}
+        onMouseLeave={this.updateButton}
+      >
+        {this.props.text}
+      </ButtonStyle>
     );
   }
 }

@@ -2,9 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Artist from './Artist.jsx';
 
-
-const getRelatedArtist = (id) => {
-  return fetch(`http://localhost:3100/data/artist?id=${id}`).then((response) => {
+const getRelatedArtist = id => {
+  return fetch(`http://localhost:3100/data/artist?id=${id}`).then(response => {
     return response.json();
   });
 };
@@ -13,18 +12,17 @@ class ArtistList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      artists: [],
+      artists: []
     };
     this.List = '';
     this.Icon = '';
   }
 
-
   componentDidMount() {
     const newstate = [];
 
-    this.props.artist.relatedartists.forEach((relatedartist) => {
-      getRelatedArtist(relatedartist).then((artistdata) => {
+    this.props.artist.relatedartists.forEach(relatedartist => {
+      getRelatedArtist(relatedartist).then(artistdata => {
         const component = artistdata;
         newstate.push(component);
         this.setState({ artists: newstate });
@@ -51,7 +49,7 @@ class ArtistList extends React.Component {
       padding: 32px;
       width: ${this.props.size.width};
       height: ${this.props.size.height};
-      letter-spacing: .015em;
+      letter-spacing: 0.015em;
     `;
   }
 
@@ -63,14 +61,17 @@ class ArtistList extends React.Component {
     const { Icon, List } = this;
     return (
       <List>
-        {this.state.artists.map((artistdata) => {
+        {this.state.artists.map(artistdata => {
           const { _id } = artistdata;
-          return <Icon key={_id} onContextMenu={this.props.rightclick}><Artist artist={artistdata} /></Icon>;
+          return (
+            <Icon key={_id} onContextMenu={this.props.rightclick}>
+              <Artist artist={artistdata} />
+            </Icon>
+          );
         })}
       </List>
     );
   }
 }
-
 
 export default ArtistList;

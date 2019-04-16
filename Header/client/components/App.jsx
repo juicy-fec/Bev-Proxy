@@ -1,18 +1,15 @@
-import React, { PureComponent } from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-// import {BrowserRouter, Route, Link} from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 
 import fetch from 'node-fetch';
 
 import Dropdown from './Dropdown.jsx';
 import About from './About.jsx';
-import Overview from './Overview.jsx';
-import RelatedArtists from './RelatedArtists.jsx';
 
 import '../styles.scss';
 
-class Header extends PureComponent {
+class Header extends Component {
   constructor(props) {
     super(props);
 
@@ -24,6 +21,16 @@ class Header extends PureComponent {
     };
 
     this.getArtistState = this.getArtistState.bind(this);
+    this.handleOverviewClick = this.handleOverviewClick.bind(this);
+    this.handleRelatedClick = this.handleRelatedClick.bind(this);
+  }
+
+  handleOverviewClick() {
+    window.location.hash = '#overview';
+  }
+
+  handleRelatedClick() {
+    window.location.hash = '#related';
   }
 
   getArtistState(id) {
@@ -55,19 +62,24 @@ class Header extends PureComponent {
     const routing = (
       <Router>
         <div className="btn-container-bottom">
-          <Link to="/">
-            <button className="btn-overview">overview</button>
+          <Link to="/#overview">
+            <button className="btn-overview" onClick={this.handleOverviewClick}>
+              overview
+            </button>
           </Link>
-          <Link to="/relatedartists">
-            <button className="btn-related-artists">related artists</button>
+          <Link to="/#related">
+            <button
+              className="btn-related-artists"
+              onClick={this.handleRelatedClick}
+            >
+              related artists
+            </button>
           </Link>
           <Link to="/about">
             <button className="btn-about">about</button>
           </Link>
         </div>
         <div className="body-component">
-          <Route exact path="/" component={Overview} />
-          <Route path="/relatedartists" component={RelatedArtists} />
           <Route path="/about" component={About} />
         </div>
       </Router>

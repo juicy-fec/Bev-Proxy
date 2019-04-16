@@ -29,25 +29,36 @@ class Ellipsis extends PureComponent {
   render() {
     const { display } = this.state;
     switch (display) {
-      case false: return (
-        <div className="ellipsis" onClick={this.showContext} data-testid="ellipsis">
-          <i className="fas fa-ellipsis-h" />
-        </div>
-      );
-      case true: return (
-        <div className="contextMenu" onClick={this.hideContext} data-testid="context-menu">
-          <div>Start Radio</div>
-          <div>Save to Your Library</div>
-          <div>Add to Queue</div>
-          <div>Add to Playlist</div>
-          <div>Copy Song Link</div>
-        </div>
-      );
-      default: return (
-        <div className="ellipsis">
-          <i className="fas fa-ellipsis-h" />
-        </div>
-      );
+      case false:
+        return (
+          <div
+            className="ellipsis"
+            onClick={this.showContext}
+            data-testid="ellipsis"
+          >
+            <i className="fas fa-ellipsis-h" />
+          </div>
+        );
+      case true:
+        return (
+          <div
+            className="contextTopMenu"
+            onClick={this.hideContext}
+            data-testid="context-menu"
+          >
+            <div>Start Radio</div>
+            <div>Save to Your Library</div>
+            <div>Add to Queue</div>
+            <div>Add to Playlist</div>
+            <div>Copy Song Link</div>
+          </div>
+        );
+      default:
+        return (
+          <div className="ellipsis">
+            <i className="fas fa-ellipsis-h" />
+          </div>
+        );
     }
   }
 }

@@ -16,6 +16,10 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getTopTracks();
+    const context = this;
+    window.addEventListener('hashchange', () => {
+      context.forceUpdate();
+    });
   }
 
   getTopTracks() {
@@ -42,21 +46,31 @@ class App extends React.Component {
     const { tracks, currentTrack } = this.state;
     const { setCurrentTrack } = this;
     if (!tracks) return null;
-
-    return (
-      <div id="main" data-testid="popular-main">
-        <div id="left" />
-        <div id="content">
-          <h1 id="header">Popular</h1>
-          <PopularList
-            data-testid="popular-list"
-            tracks={tracks}
-            setCurrentTrack={setCurrentTrack}
-          />
+    if (window.location.hash !== '#related') {
+      return (
+        <div id="main" data-testid="popular-main">
+          <div id="left" />
+          <div id="content">
+            <h1 id="header">Popular</h1>
+            <PopularList
+              data-testid="popular-list"
+              tracks={tracks}
+              setCurrentTrack={setCurrentTrack}
+            />
+          </div>
+          <AudioPlayer currentTrack={currentTrack} />
         </div>
-        <AudioPlayer currentTrack={currentTrack} />
-      </div>
-    );
+      );
+    } else {
+      return (
+        <div id="main" data-testid="popular-main">
+          <div id="left" />
+          <div id="content">
+            <AudioPlayer currentTrack={currentTrack} />
+          </div>
+        </div>
+      );
+    }
   }
 }
 

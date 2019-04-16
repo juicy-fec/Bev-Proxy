@@ -12,11 +12,23 @@
 .bodyComp {
   position: flex;
   flex-direction: column;
+  width: 100%;
 }
 #Toptracks {
   width: auto;
   margin-left: 20px;
+  padding-right: 40px;
 }
 #Related {
   margin-left: 254px;
+  padding-right: 40px;
+}
+#relatedartists {
+  margin-left: 230px;
+  width: 100%;
+}
+#headerContMount {
+  top: 0;
+  left: 0;
+  margin-top: -25px;
 }
